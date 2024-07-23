@@ -1,0 +1,1264 @@
+<entity-mappings xmlns="http://www.hibernate.org/xsd/orm/mapping"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.hibernate.org/xsd/orm/mapping
+                 https://hibernate.org/xsd/orm/mapping/mapping-3.1.0.xsd">
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for target schema (bankingData package)
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+<entity class="com.datagear.goaml.core.entity.bankingData.BankingData">
+    <table schema="target"/>
+</entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for ReportingPerson schema (reportingPerson package)
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.EmployerAddressIdReportingPerson">
+        <table name="EmpAddrIdReportingPerson" schema="ReportingPerson"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EMPADDRIDREPORTINGPERSON_SEQ"/>
+                <sequence-generator name="EMPADDRIDREPORTINGPERSON_SEQ" sequence-name="ReportingPerson.EMPADDRIDREPORTINGPERSON_SEQ" schema="ReportingPerson" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.EmployerPhoneIdReportingPerson">
+        <table name="EmpPhoneIdRepPerson" schema="ReportingPerson"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EMPPHONEIDREPPERSON_SEQ"/>
+                <sequence-generator name="EMPPHONEIDREPPERSON_SEQ" sequence-name="ReportingPerson.EMPPHONEIDREPPERSON_SEQ" schema="ReportingPerson" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.ReportingPerson">
+        <table schema="ReportingPerson"/>
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="reportingPersonEMAILS" schema="ReportingPerson">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TAddressReportingPerson">
+        <table schema="ReportingPerson"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TADDRESSREPORTINGPERSON_SEQ"/>
+                <sequence-generator name="TADDRESSREPORTINGPERSON_SEQ" sequence-name="ReportingPerson.TADDRESSREPORTINGPERSON_SEQ" schema="ReportingPerson" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TPersonIdentificationReportingPerson">
+        <table name="TPersonIdReportingPerson" schema="ReportingPerson"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPERSONIDREPORTINGPERSON_SEQ"/>
+                <sequence-generator name="TPERSONIDREPORTINGPERSON_SEQ" sequence-name="ReportingPerson.TPERSONIDREPORTINGPERSON_SEQ" schema="ReportingPerson" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TPhoneReportingPerson">
+        <table schema="ReportingPerson"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPHONEREPORTINGPERSON_SEQ"/>
+                <sequence-generator name="TPHONEREPORTINGPERSON_SEQ" sequence-name="ReportingPerson.TPHONEREPORTINGPERSON_SEQ" schema="ReportingPerson" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <!--
+#####################################################################################################################
+#####################################################################################################################
+                                Overriding id generation for target schema (sar package)
+#####################################################################################################################
+#####################################################################################################################
+-->
+    <entity class="com.datagear.goaml.core.entity.sar.AccountFundType">
+        <table name="AccountFundType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ACCOUNTFUNDTYPE_SEQ"/>
+                <sequence-generator name="ACCOUNTFUNDTYPE_SEQ" sequence-name="target.ACCOUNTFUNDTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedAccountType">
+        <table name="AccountRelatedAccountType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ACCOUNTRELATEDACCOUNTTYPE_SEQ"/>
+                <sequence-generator name="ACCOUNTRELATEDACCOUNTTYPE_SEQ" sequence-name="target.ACCOUNTRELATEDACCOUNTTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedEntityType">
+        <table name="AccountRelatedEntityType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ACCOUNTRELATEDENTITYTYPE_SEQ"/>
+                <sequence-generator name="ACCOUNTRELATEDENTITYTYPE_SEQ" sequence-name="target.ACCOUNTRELATEDENTITYTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedPersonType">
+        <table name="AccountRelatedPersonType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ACCOUNTRELATEDPERSONTYPE_SEQ"/>
+                <sequence-generator name="ACCOUNTRELATEDPERSONTYPE_SEQ" sequence-name="target.ACCOUNTRELATEDPERSONTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Activity">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ACTIVITY_SEQ"/>
+                <sequence-generator name="ACTIVITY_SEQ" sequence-name="target.ACTIVITY_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.CounterReport">
+        <table name="Report_Esc" schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.DirectorId">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerAddressId">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TEMPLOYERADDRESSID_SEQ"/>
+                <sequence-generator name="TEMPLOYERADDRESSID_SEQ" sequence-name="target.EMPLOYERADDRESSID_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerPhoneId">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EMPLOYERPHONEID_SEQ"/>
+                <sequence-generator name="EMPLOYERPHONEID_SEQ" sequence-name="target.EMPLOYERPHONEID_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerType">
+        <table name="EmployerType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EMPLOYERTYPE_SEQ"/>
+                <sequence-generator name="EMPLOYERTYPE_SEQ" sequence-name="target.EMPLOYERTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EntityRelatedEntityType">
+        <table name="EntityRelatedEntityType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ENTITYRELATEDENTITYTYPE_SEQ"/>
+                <sequence-generator name="ENTITYRELATEDENTITYTYPE_SEQ" sequence-name="target.ENTITYRELATEDENTITYTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EntityRelatedPersonType">
+        <table name="EntityRelatedPersonType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ENTITYRELATEDPERSONTYPE_SEQ"/>
+                <sequence-generator name="ENTITYRELATEDPERSONTYPE_SEQ" sequence-name="target.ENTITYRELATEDPERSONTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.GenericAdditionalInfoType">
+        <table name="GenericAdditionalInfoType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="GENERICADDITIONALINFOTYPE_SEQ"/>
+                <sequence-generator name="GENERICADDITIONALINFOTYPE_SEQ" sequence-name="target.GENERICADDITIONALINFOTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.GoamlReportId">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.LookupValues">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="LOOKUPS_SEQ"/>
+                <sequence-generator name="LOOKUPS_SEQ" sequence-name="target.LOOKUPS_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.NetworkDeviceType">
+        <table name="NetworkDeviceType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="NETWORKDEVICETYPE_SEQ"/>
+                <sequence-generator name="NETWORKDEVICETYPE_SEQ" sequence-name="target.NETWORKDEVICETYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PepDetails">
+        <table name="PepDetails" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="PEPDETAILS_SEQ"/>
+                <sequence-generator name="PEPDETAILS_SEQ" sequence-name="target.PEPDETAILS_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PersonRelatedPersonType">
+        <table name="PersonRelatedPersonType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="PERSONRELATEDPERSONTYPE_SEQ"/>
+                <sequence-generator name="PERSONRELATEDPERSONTYPE_SEQ" sequence-name="target.PERSONRELATEDPERSONTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PreviousNameType">
+        <table name="PreviousNameType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="PREVIOUSNAMETYPE_SEQ"/>
+                <sequence-generator name="PREVIOUSNAMETYPE_SEQ" sequence-name="target.PREVIOUSNAMETYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Report">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="REPORT_SEQ"/>
+                <sequence-generator name="REPORT_SEQ" sequence-name="target.REPORT_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportGroup">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="REPORTGROUP_SEQ"/>
+                <sequence-generator name="REPORTGROUP_SEQ" sequence-name="target.REPORTGROUP_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportHistory">
+        <table name="History" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="HISTORY_SEQ"/>
+                <sequence-generator name="HISTORY_SEQ" sequence-name="target.HISTORY_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportOwnership">
+        <table name="REPORTOWNERSHIP" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="REPORTOWNERSHIP_SEQ"/>
+                <sequence-generator name="REPORTOWNERSHIP_SEQ" sequence-name="target.REPORTOWNERSHIP_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportPartyType">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="REPORTPARTYTYPE_SEQ"/>
+                <sequence-generator name="REPORTPARTYTYPE_SEQ" sequence-name="target.REPORTPARTYTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReRelationshipType">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="RERELATIONSHIPTYPE_SEQ"/>
+                <sequence-generator name="RERELATIONSHIPTYPE_SEQ" sequence-name="target.RERELATIONSHIPTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.RouteType">
+        <table name="RouteType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ROUTETYPE_SEQ"/>
+                <sequence-generator name="ROUTETYPE_SEQ" sequence-name="target.ROUTETYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.SanctionListType">
+        <table name="SanctionListType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SANCTIONLISTTYPE_SEQ"/>
+                <sequence-generator name="SANCTIONLISTTYPE_SEQ" sequence-name="target.SANCTIONLISTTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Signatory">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SIGNATORY_SEQ"/>
+                <sequence-generator name="SIGNATORY_SEQ" sequence-name="target.SIGNATORY_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.SocialAccountType">
+        <table name="SocialAccountType" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SOCIALACCOUNTTYPE_SEQ"/>
+                <sequence-generator name="SOCIALACCOUNTTYPE_SEQ" sequence-name="target.SOCIALACCOUNTTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccount">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TACCOUNT_SEQ"/>
+                <sequence-generator name="TACCOUNT_SEQ" sequence-name="target.TACCOUNT_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccountBase">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccountPartyMyClient">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAddress">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TADDRESS_SEQ"/>
+                <sequence-generator name="TADDRESS_SEQ" sequence-name="target.TADDRESS_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAddressTranaction">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TADDRESSTRANACTION_SEQ"/>
+                <sequence-generator name="TADDRESSTRANACTION_SEQ" sequence-name="target.TADDRESSTRANACTION_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntity">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TENTITY_SEQ"/>
+                <sequence-generator name="TENTITY_SEQ" sequence-name="target.TENTITY_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityBase">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityIdentification">
+        <table name="TEntityIdentification" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TENTITYIDENTIFICATION_SEQ"/>
+                <sequence-generator name="TENTITYIDENTIFICATION_SEQ" sequence-name="target.TENTITYIDENTIFICATION_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityPartyMyClient">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TFromMyClient">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TFrom">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TFROM_SEQ"/>
+                <sequence-generator name="TFROM_SEQ" sequence-name="target.TFROM_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPerson">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPERSON_SEQ"/>
+                <sequence-generator name="TPERSON_SEQ" sequence-name="target.TPERSON_SEQ" schema="target" allocation-size="1"/>
+            </id>
+            <element-collection name="email">
+                <collection-table name="EMAILS" schema="target">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonBase">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonIdentification">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPERSONIDENTIFICATION_SEQ"/>
+                <sequence-generator name="TPERSONIDENTIFICATION_SEQ" sequence-name="target.TPERSONIDENTIFICATION_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonIdentificationType">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPERSONIDENTIFICATIONTYPE_SEQ"/>
+                <sequence-generator name="TPERSONIDENTIFICATIONTYPE_SEQ" sequence-name="target.TPERSONIDENTIFICATIONTYPE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonPartyMyClient">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPhone">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPHONE_SEQ"/>
+                <sequence-generator name="TPHONE_SEQ" sequence-name="target.TPHONE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Transaction">
+        <table name="[TRANSACTION]" schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TRANSACTION_SEQ"/>
+                <sequence-generator name="TRANSACTION_SEQ" sequence-name="target.TRANSACTION_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TTo">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TTO_SEQ"/>
+                <sequence-generator name="TTO_SEQ" sequence-name="target.TTO_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TToMyClient">
+        <table schema="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TTransItem">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TTRANSITEM_SEQ"/>
+                <sequence-generator name="TTRANSITEM_SEQ" sequence-name="target.TTRANSITEM_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.UserCode">
+        <table schema="target"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="USERCODE_SEQ"/>
+                <sequence-generator name="USERCODE_SEQ" sequence-name="target.USERCODE_SEQ" schema="target" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for dgaml schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscAccountDimDGAML">
+        <table name="Account" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscAssociateDimDGAML">
+        <table name="Employee" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscBankDimDGAML">
+        <table name="Financial_Institution" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscBranchDGAML">
+        <table name="Branch" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowBankBridgeDGAML">
+        <table name="FSC_CASH_FLOW_BANK_BRIDGE" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowFactDGAML">
+        <table name="Transaction_Flow" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowFactGOAML">
+        <table name="FSC_CASH_FLOW_FACT_GOAML" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCountryDimDGAML">
+        <table name="COUNTRY_LKP" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCurrencyDimDGAML">
+        <table name="Currency_LKP" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscDateDimDGAML">
+        <table name="Date_LKB" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscExtPartyAccountDimDGAML">
+        <table name="External_Customer" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscMonthDimDGAML">
+        <table name="FSC_MONTH_DIM" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscPartyAccountBridgeDGAML">
+        <table name="Customer_X_Account" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscPartyDimDGAML">
+        <table name="Customer" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTimeDimDGAML">
+        <table name="FSC_TIME_DIM" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionDimDGAML">
+        <table name="Transaction_Details" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionStatusDimDGAML">
+        <table name="FSC_TRANSACTION_STATUS_DIM" schema="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionTypeDimDGAML">
+        <table name="Transaction_Type" schema="DGAMLCORE"/>
+    </entity>
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for source schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <!--  ##############################################################################################################
+                            Overriding id generation for source schema external package
+          ##############################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtEmployerAddressId">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTEMPLOYERADDRESSID_SEQ"/>
+                <sequence-generator name="EXTEMPLOYERADDRESSID_SEQ" sequence-name="source.EXTEMPLOYERADDRESSID_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtEmployerPhoneId">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTEMPLOYERPHONEID_SEQ"/>
+                <sequence-generator name="EXTEMPLOYERPHONEID_SEQ" sequence-name="source.EXTEMPLOYERPHONEID_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSAccount">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTSACCOUNT_SEQ"/>
+                <sequence-generator name="EXTSACCOUNT_SEQ" sequence-name="source.EXTSACCOUNT_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSEntity">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTSENTITY_SEQ"/>
+                <sequence-generator name="EXTSENTITY_SEQ" sequence-name="source.EXTSENTITY_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSPerson">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTSPERSON_SEQ"/>
+                <sequence-generator name="EXTSPERSON_SEQ" sequence-name="source.EXTSPERSON_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTAddress">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTTADDRESS_SEQ"/>
+                <sequence-generator name="EXTTADDRESS_SEQ" sequence-name="source.EXTTADDRESS_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTPersonIdentification">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTTPERSONIDENTIFICATION_SEQ"/>
+                <sequence-generator name="EXTTPERSONIDENTIFICATION_SEQ" sequence-name="source.EXTTPERSONIDENTIFICATION_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTPhone">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="EXTTPHONE_SEQ"/>
+                <sequence-generator name="EXTTPHONE_SEQ" sequence-name="source.EXTTPHONE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <!--  ##############################################################################################################
+                                    mapping source schema fcfcore package
+          ##############################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscAccountDim">
+        <table name="FSC_ACCOUNT_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscAssociateDim">
+        <table name="FSC_ASSOCIATE_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscBankDim">
+        <table name="FSC_BANK_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscBranchDim">
+        <table name="FSC_BRANCH_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCashFlowFact">
+        <table name="FSC_CASH_FLOW_FACT" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCashFlowFactGOAML">
+        <table name="FSC_CASH_FLOW_FACT_GOAML" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCountryDim">
+        <table name="FSC_COUNTRY_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCurrencyDim">
+        <table name="FSC_CURRENCY_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscDateDim">
+        <table name="FSC_DATE_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscExtPartyAccountDim">
+        <table name="FSC_EXT_PARTY_ACCOUNT_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscMonthDim">
+        <table name="FSC_MONTH_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscPartyAccountBridge">
+        <table name="FSC_PARTY_ACCOUNT_BRIDGE" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscPartyDim">
+        <table name="FSC_PARTY_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTimeDim">
+        <table name="FSC_TIME_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionDim">
+        <table name="FSC_TRANSACTION_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionStatusDim">
+        <table name="FSC_TRANSACTION_STATUS_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionTypeDim">
+        <table name="FSC_TRANSACTION_TYPE_DIM" schema="FCFCORE"/>
+    </entity>
+
+    <!--
+    ####################################################################################################################
+                                            mapping source schema source package
+    ####################################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.AccountRelatedAccountBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.AccountRelatedPersonBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EmployerAddressId">
+        <table schema="source" name="SEmployerAddressId"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SEMPLOYERADDRESSID_SEQ"/>
+                <sequence-generator name="SEMPLOYERADDRESSID_SEQ" sequence-name="source.EMPLOYERADDRESSID_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EmployerPhoneId">
+        <table schema="source" name="SEmployerPhoneId"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SEMPLOYERPHONEID_SEQ"/>
+                <sequence-generator name="SEMPLOYERPHONEID_SEQ" sequence-name="source.EMPLOYERPHONEID_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityAccountBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityDirectorBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedAccountBridge">
+        <table schema="source" name="AccountRelatedEntityBridge"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedEntityBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedPersonBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.PersonAccountBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.PersonRelatedPersonBridge">
+        <table schema="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SAccount">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SACCOUNT_SEQ"/>
+                <sequence-generator name="SACCOUNT_SEQ" sequence-name="source.SACCOUNT_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SAccountFundType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SACCOUNTFUNDTYPE_SEQ"/>
+                <sequence-generator name="SACCOUNTFUNDTYPE_SEQ" sequence-name="source.SACCOUNTFUNDTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SDirectorId">
+        <table name="DirectorId" schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="DIRECTORID_SEQ"/>
+                <sequence-generator name="DIRECTORID_SEQ" sequence-name="source.DIRECTORID_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEmployerType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SEMPLOYERTYPE_SEQ"/>
+                <sequence-generator name="SEMPLOYERTYPE_SEQ" sequence-name="source.SEMPLOYERTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEntity">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SENTITY_SEQ"/>
+                <sequence-generator name="SENTITY_SEQ" sequence-name="source.SENTITY_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEntityIdentification">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SENTITYIDENTIFICATION_SEQ"/>
+                <sequence-generator name="SENTITYIDENTIFICATION_SEQ" sequence-name="source.SENTITYIDENTIFICATION_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SGenericAdditionalInfoType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SGENERICADDITIONALINFOTYPE_SEQ"/>
+                <sequence-generator name="SGENERICADDITIONALINFOTYPE_SEQ" sequence-name="source.SGENERICADDITIONALINFOTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SNetworkDeviceType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SNETWORKDEVICETYPE_SEQ"/>
+                <sequence-generator name="SNETWORKDEVICETYPE_SEQ" sequence-name="source.SNETWORKDEVICETYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+    <entity class="com.datagear.goaml.core.entity.source.SourceAudit">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SOURCEAUDIT_SEQ"/>
+                <sequence-generator name="SOURCEAUDIT_SEQ" sequence-name="source.SOURCEAUDIT_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPepDetails">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SPEPDETAILS_SEQ"/>
+                <sequence-generator name="SPEPDETAILS_SEQ" sequence-name="source.SPEPDETAILS_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPerson">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SPERSON_SEQ"/>
+                <sequence-generator name="SPERSON_SEQ" sequence-name="source.SPERSON_SEQ" schema="source" allocation-size="1"/>
+            </id>
+            <element-collection name="email">
+                <collection-table name="SPERSONEMAILS" schema="source">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPreviousNameType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SPREVIOUSNAMETYPE_SEQ"/>
+                <sequence-generator name="SPREVIOUSNAMETYPE_SEQ" sequence-name="source.SPREVIOUSNAMETYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SReRelationshipType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SRERELATIONSHIPTYPE_SEQ"/>
+                <sequence-generator name="SRERELATIONSHIPTYPE_SEQ" sequence-name="source.SRERELATIONSHIPTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SSanctionListType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SSANCTIONLISTTYPE_SEQ"/>
+                <sequence-generator name="SSANCTIONLISTTYPE_SEQ" sequence-name="source.SSANCTIONLISTTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SSocialAccountType">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SSOCIALACCOUNTTYPE_SEQ"/>
+                <sequence-generator name="SSOCIALACCOUNTTYPE_SEQ" sequence-name="source.SSOCIALACCOUNTTYPE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.Stransaction">
+        <table schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="STRANSACTION_SEQ"/>
+                <sequence-generator name="STRANSACTION_SEQ" sequence-name="source.STRANSACTION_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TAddress">
+        <table name="SADDRESS" schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SADDRESS_SEQ"/>
+                <sequence-generator name="SADDRESS_SEQ" sequence-name="source.TADDRESS_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TPersonIdentification">
+        <table name="SPersonIdentification" schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="TPersonIdentification_SEQ"/>
+                <sequence-generator name="TPersonIdentification_SEQ" sequence-name="source.TPersonIdentification_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPersonIdentificationNew">
+        <table name="SPersonIdentification_NEW" schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SPERSONIDENTIFICATION_NEW_SEQ"/>
+                <sequence-generator name="SPERSONIDENTIFICATION_NEW_SEQ" sequence-name="source.SPERSONIDENTIFICATION_NEW_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TPhone">
+        <table name="SPhone" schema="source"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="SPHONE_SEQ"/>
+                <sequence-generator name="SPHONE_SEQ" sequence-name="source.TPHONE_SEQ" schema="source" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for DGCOMMENT schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.comment.model.Attachment">
+        <table name="Attachment" schema="DGCOMMENT"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ATTACHMENT_SEQ"/>
+                <sequence-generator name="ATTACHMENT_SEQ" sequence-name="DGCOMMENT.ATTACHMENT_SEQ" schema="DGCOMMENT" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.comment.model.AttachmentFile">
+        <table name="Attachment_File" schema="DGCOMMENT"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="ATTACHMENT_FILE_SEQ"/>
+                <sequence-generator name="ATTACHMENT_FILE_SEQ" sequence-name="DGCOMMENT.ATTACHMENT_FILE_SEQ" schema="DGCOMMENT" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.comment.model.DGComment">
+        <table schema="DGCOMMENT"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="DGCOMMENT_SEQ"/>
+                <sequence-generator name="DGCOMMENT_SEQ" sequence-name="DGCOMMENT.DGCOMMENT_SEQ" schema="DGCOMMENT" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.comment.model.ReportXML">
+        <table name="Report_XML" schema="DGCOMMENT"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="REPORT_XML_SEQ"/>
+                <sequence-generator name="REPORT_XML_SEQ" sequence-name="DGCOMMENT.REPORT_XML_SEQ" schema="DGCOMMENT" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for dggoaml_admin schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.security.model.BuInfo">
+        <table name="BU_INFO" schema="dggoaml_admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="BuInfo_SEQ"/>
+                <sequence-generator name="BuInfo_SEQ" sequence-name="dggoaml_admin.BuInfo_SEQ" schema="dggoaml_admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.BuProperty">
+        <table name="BU_PROP_CONFIG" schema="dggoaml_admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="BU_PROP_CONFIG_SEQ"/>
+                <sequence-generator name="BU_PROP_CONFIG_SEQ" sequence-name="dggoaml_admin.BU_PROP_CONFIG_SEQ" schema="dggoaml_admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.Capability">
+        <table name="Capability" schema="admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="CAPABILITY_SEQ"/>
+                <sequence-generator name="CAPABILITY_SEQ" sequence-name="admin.CAPABILITY_SEQ" schema="admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.Group">
+        <table name="[Group]" schema="admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="GROUP_SEQ"/>
+                <sequence-generator name="GROUP_SEQ" sequence-name="Admin.GROUP_SEQ" schema="Admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.Group_capability">
+        <table name="Group_Capability" schema="admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.LoggedUser">
+        <table name="LoggedUser" schema="dggoaml_admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="LOGGEDUSER_SEQ"/>
+                <sequence-generator name="LOGGEDUSER_SEQ" sequence-name="dggoaml_admin.LOGGEDUSER_SEQ" schema="dggoaml_admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.loggedUserCounter">
+        <table name="loggedUserCounter" schema="dggoaml_admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.User">
+        <table name="[User]" schema="admin"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="SEQUENCE" generator="USER_SEQ"/>
+                <sequence-generator name="USER_SEQ" sequence-name="Admin.USER_SEQ" schema="Admin" allocation-size="1"/>
+            </id>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.security.model.User_Group">
+        <table name="User_Group" schema="admin"/>
+    </entity>
+
+    <!--
+       #####################################################################################################################
+       #####################################################################################################################
+                                                   Embeddable
+       #####################################################################################################################
+       #####################################################################################################################
+       -->
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.ReportIndicators">
+        <attributes>
+            <element-collection name="indicator">
+                <collection-table name="ReportIndicatorType" schema="target">
+                    <join-column name="Report_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.Emails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="EmailAddressEntity" schema="target">
+                    <join-column name="entity_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.EmailsPerson">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="EmailAddress" schema="target">
+                    <join-column name="person_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.URLs">
+        <attributes>
+            <element-collection name="url">
+                <collection-table name="URLAddress" schema="target">
+                    <join-column name="entity_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.source.SDirectorEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="DirEMAILS" schema="source">
+                    <join-column name="DIRECTOR_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.source.SPersonEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="SPERSONEMAILS_NEW" schema="source">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+    <embeddable class="com.datagear.goaml.core.entity.source.SEntityEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="SENTITYEMAILS" schema="source">
+                    <join-column name="ENTITY_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+    <embeddable class="com.datagear.goaml.core.entity.source.SURLAddress">
+        <attributes>
+            <element-collection name="url">
+                <collection-table name="SURLADDRESS" schema="source">
+                    <join-column name="ENTITY_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+</entity-mappings>

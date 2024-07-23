@@ -1,0 +1,770 @@
+<entity-mappings xmlns="http://www.hibernate.org/xsd/orm/mapping"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.hibernate.org/xsd/orm/mapping
+                 https://hibernate.org/xsd/orm/mapping/mapping-3.1.0.xsd">
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for target schema (bankingData package)
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+<entity class="com.datagear.goaml.core.entity.bankingData.BankingData">
+    <table catalog="target"/>
+</entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for ReportingPerson schema (reportingPerson package)
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.EmployerAddressIdReportingPerson">
+        <table name="EmpAddrIdReportingPerson" catalog="ReportingPerson"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.EmployerPhoneIdReportingPerson">
+        <table name="EmpPhoneIdRepPerson" catalog="ReportingPerson"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.ReportingPerson">
+        <table catalog="ReportingPerson"/>
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="reportingPersonEMAILS" catalog="ReportingPerson">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TAddressReportingPerson">
+        <table catalog="ReportingPerson"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TPersonIdentificationReportingPerson">
+        <table name="TPersonIdReportingPerson" catalog="ReportingPerson"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.reportingPerson.TPhoneReportingPerson">
+        <table catalog="ReportingPerson"/>
+    </entity>
+
+    <!--
+#####################################################################################################################
+#####################################################################################################################
+                                Overriding id generation for target schema (sar package)
+#####################################################################################################################
+#####################################################################################################################
+-->
+    <entity class="com.datagear.goaml.core.entity.sar.AccountFundType">
+        <table name="AccountFundType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedAccountType">
+        <table name="AccountRelatedAccountType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedEntityType">
+        <table name="AccountRelatedEntityType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.AccountRelatedPersonType">
+        <table name="AccountRelatedPersonType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Activity">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.CounterReport">
+        <table name="Report_Esc" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.DirectorId">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerAddressId">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerPhoneId">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EmployerType">
+        <table name="EmployerType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EntityRelatedEntityType">
+        <table name="EntityRelatedEntityType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.EntityRelatedPersonType">
+        <table name="EntityRelatedPersonType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.GenericAdditionalInfoType">
+        <table name="GenericAdditionalInfoType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.GoamlReportId">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.LookupValues">
+        <table name="lookups" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.NetworkDeviceType">
+        <table name="NetworkDeviceType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PepDetails">
+        <table name="PepDetails" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PersonRelatedPersonType">
+        <table name="PersonRelatedPersonType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.PreviousNameType">
+        <table name="PreviousNameType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Report">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportGroup">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportHistory">
+        <table name="History" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportOwnership">
+        <table name="REPORTOWNERSHIP" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReportPartyType">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.ReRelationshipType">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.RouteType">
+        <table name="RouteType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.SanctionListType">
+        <table name="SanctionListType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Signatory">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.SocialAccountType">
+        <table name="SocialAccountType" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccount">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccountBase">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAccountPartyMyClient">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAddress">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TAddressTranaction">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntity">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityBase">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityIdentification">
+        <table name="TEntityIdentification" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TEntityPartyMyClient">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TFromMyClient">
+        <table catalog="target"/>
+    </entity>
+    <entity class="com.datagear.goaml.core.entity.sar.TFrom">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPerson">
+        <table catalog="target"/>
+            <attributes>
+                <element-collection name="email">
+                    <collection-table name="EMAILS" catalog="target">
+                        <join-column name="PERSON_ID"/>
+                    </collection-table>
+                </element-collection>
+            </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonBase">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonIdentification">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonIdentificationType">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPersonPartyMyClient">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TPhone">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.Transaction">
+        <table name="[TRANSACTION]" catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TTo">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TToMyClient">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.TTransItem">
+        <table catalog="target"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.sar.UserCode">
+        <table catalog="target"/>
+    </entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for DGAMLCORE schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscAccountDimDGAML">
+        <table name="Account" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscAssociateDimDGAML">
+        <table name="Employee" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscBankDimDGAML">
+        <table name="Financial_Institution" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscBranchDGAML">
+        <table name="Branch" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowBankBridgeDGAML">
+        <table name="FSC_CASH_FLOW_BANK_BRIDGE" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowFactDGAML">
+        <table name="Transaction_Flow" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCashFlowFactGOAML">
+        <table name="FSC_CASH_FLOW_FACT_GOAML" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCountryDimDGAML">
+        <table name="COUNTRY_LKP" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscCurrencyDimDGAML">
+        <table name="Currency_LKP" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscDateDimDGAML">
+        <table name="Date_LKB" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscExtPartyAccountDimDGAML">
+        <table name="External_Customer" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscMonthDimDGAML">
+        <table name="FSC_MONTH_DIM" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscPartyAccountBridgeDGAML">
+        <table name="Customer_X_Account" catalog="DGAMLCORE"/>
+    </entity>
+
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscPartyDimDGAML">
+        <table name="Customer" catalog="DGAMLCORE"/>
+    </entity>
+
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTimeDimDGAML">
+        <table name="FSC_TIME_DIM" catalog="DGAMLCORE"/>
+    </entity>
+
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionDimDGAML">
+        <table name="Transaction_Details" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionStatusDimDGAML">
+        <table name="FSC_TRANSACTION_STATUS_DIM" catalog="DGAMLCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.dgaml.FscTransactionTypeDimDGAML">
+        <table name="Transaction_Type" catalog="DGAMLCORE"/>
+    </entity>
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for source schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <!--  ##############################################################################################################
+                            Overriding id generation for source schema external package
+          ##############################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtEmployerAddressId">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtEmployerPhoneId">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSAccount">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSEntity">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtSPerson">
+        <table catalog="source"/>
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="ExtSPersonEMAILS" catalog="source">
+                    <join-column name="ExtSPerson_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTAddress">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTPersonIdentification">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.external.ExtTPhone">
+        <table catalog="source"/>
+    </entity>
+
+    <!--  ##############################################################################################################
+                                    mapping FCFCORE schema fcfcore package
+          ##############################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscAccountDim">
+        <table name="FSC_ACCOUNT_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscAssociateDim">
+        <table name="FSC_ASSOCIATE_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscBankDim">
+        <table name="FSC_BANK_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscBranchDim">
+        <table name="FSC_BRANCH_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCashFlowFact">
+        <table name="FSC_CASH_FLOW_FACT" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCashFlowFactGOAML">
+        <table name="FSC_CASH_FLOW_FACT_GOAML" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCountryDim">
+        <table name="FSC_COUNTRY_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscCurrencyDim">
+        <table name="FSC_CURRENCY_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscDateDim">
+        <table name="FSC_DATE_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscExtPartyAccountDim">
+        <table name="FSC_EXT_PARTY_ACCOUNT_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscMonthDim">
+        <table name="FSC_MONTH_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscPartyAccountBridge">
+        <table name="FSC_PARTY_ACCOUNT_BRIDGE" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscPartyDim">
+        <table name="FSC_PARTY_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTimeDim">
+        <table name="FSC_TIME_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionDim">
+        <table name="FSC_TRANSACTION_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionStatusDim">
+        <table name="FSC_TRANSACTION_STATUS_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.fcfcore.FscTransactionTypeDim">
+        <table name="FSC_TRANSACTION_TYPE_DIM" catalog="FCFCORE"/>
+    </entity>
+
+    <!--
+    ####################################################################################################################
+                                            mapping source schema source package
+    ####################################################################################################################
+    -->
+
+    <entity class="com.datagear.goaml.core.entity.source.AccountRelatedAccountBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.AccountRelatedPersonBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EmployerAddressId">
+        <table catalog="source" name="SEmployerAddressId"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EmployerPhoneId">
+        <table catalog="source" name="SEmployerPhoneId"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityAccountBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityDirectorBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedAccountBridge">
+        <table catalog="source" name="AccountRelatedEntityBridge"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedEntityBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.EntityRelatedPersonBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.PersonAccountBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.PersonRelatedPersonBridge">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SAccount">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SAccountFundType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SDirectorId">
+        <table name="DirectorId" catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEmployerType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEntity">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SEntityIdentification">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SGenericAdditionalInfoType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SNetworkDeviceType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SourceAudit">
+        <table catalog="source"/>
+    </entity>
+
+
+    <entity class="com.datagear.goaml.core.entity.source.SPepDetails">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPerson">
+        <table catalog="source"/>
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="SPERSONEMAILS" catalog="source">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SPreviousNameType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SReRelationshipType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SSanctionListType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.SSocialAccountType">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.Stransaction">
+        <table catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TAddress">
+        <table name="SADDRESS" catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TPersonIdentification">
+        <table name="SPersonIdentification" catalog="source"/>
+    </entity>
+    <entity class="com.datagear.goaml.core.entity.source.SPersonIdentificationNew">
+        <table name="SPersonIdentification_NEW" catalog="source"/>
+    </entity>
+
+    <entity class="com.datagear.goaml.core.entity.source.TPhone">
+        <table name="SPhone" catalog="source"/>
+    </entity>
+
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for DGCOMMENT schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.comment.model.Attachment">
+        <table name="Attachment" catalog="DGCOMMENT"/>
+    </entity>
+
+    <entity class="com.datagear.comment.model.AttachmentFile">
+        <table name="Attachment_File" catalog="DGCOMMENT"/>
+    </entity>
+
+    <entity class="com.datagear.comment.model.DGComment">
+        <table catalog="DGCOMMENT"/>
+    </entity>
+
+    <entity class="com.datagear.comment.model.ReportXML">
+        <table name="Report_XML" catalog="DGCOMMENT"/>
+    </entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                        Overriding id generation for dggoaml_admin schema
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <entity class="com.datagear.security.model.BuInfo">
+        <table name="BU_INFO" catalog="dggoaml_admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.BuProperty">
+        <table name="BU_PROP_CONFIG" catalog="dggoaml_admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.Capability">
+        <table name="Capability" catalog="admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.Group">
+        <table name="[Group]" catalog="admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.Group_capability">
+        <table name="Group_Capability" catalog="admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.LoggedUser">
+        <table name="LoggedUser" catalog="dggoaml_admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.loggedUserCounter">
+        <table name="loggedUserCounter" catalog="dggoaml_admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.User">
+        <table name="[User]" catalog="admin"/>
+    </entity>
+
+    <entity class="com.datagear.security.model.User_Group">
+        <table name="User_Group" catalog="admin"/>
+    </entity>
+
+    <!--
+    #####################################################################################################################
+    #####################################################################################################################
+                                                Embeddable
+    #####################################################################################################################
+    #####################################################################################################################
+    -->
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.ReportIndicators">
+        <attributes>
+            <element-collection name="indicator">
+                <collection-table name="ReportIndicatorType" catalog="target">
+                    <join-column name="Report_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.Emails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="EmailAddressEntity" catalog="target">
+                    <join-column name="entity_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.EmailsPerson">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="EmailAddress" catalog="target">
+                    <join-column name="person_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.sar.URLs">
+        <attributes>
+            <element-collection name="url">
+                <collection-table name="URLAddress" catalog="target">
+                    <join-column name="entity_id"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.source.SDirectorEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="DirEMAILS" catalog="source">
+                    <join-column name="DIRECTOR_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+
+    <embeddable class="com.datagear.goaml.core.entity.source.SPersonEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="SPERSONEMAILS_NEW" catalog="source">
+                    <join-column name="PERSON_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+    <embeddable class="com.datagear.goaml.core.entity.source.SEntityEmails">
+        <attributes>
+            <element-collection name="email">
+                <collection-table name="SENTITYEMAILS" catalog="source">
+                    <join-column name="ENTITY_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+    <embeddable class="com.datagear.goaml.core.entity.source.SURLAddress">
+        <attributes>
+            <element-collection name="url">
+                <collection-table name="SURLADDRESS" catalog="source">
+                    <join-column name="ENTITY_ID"/>
+                </collection-table>
+            </element-collection>
+        </attributes>
+    </embeddable>
+</entity-mappings>
